@@ -34,7 +34,7 @@ imgName = {imgName_1, imgName_2, imgName_3, imgName_4};
 alphaMid = 10;
 alphaFine = 4.5;
 bandPassParams = struct('sigmaFine1', 0.7, 'sigmaFine2', 1.2, ...
-    'sigmaMid1', 1.5, 'sigmaMid2', 3.0);
+    'sigmaMid1', 1.1, 'sigmaMid2', 1.8);
 noiseParams = struct('patchSize', 5, 'stride', 3, 'tailNum', 5);
 
 %% 读取图像
