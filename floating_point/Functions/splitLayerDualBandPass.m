@@ -25,7 +25,7 @@ function [detailFine, detailMid] = splitLayerDualBandPass(img, params)
     end
 
     defaults = struct('sigmaFine1', 0.7, 'sigmaFine2', 1.2, ...
-        'sigmaMid1', 1.5, 'sigmaMid2', 3.0);
+        'sigmaMid1', 1.1, 'sigmaMid2', 1.8);
     names = fieldnames(defaults);
     if ~isempty(setdiff(fieldnames(params), names))
         error('splitLayerDualBandPass:InvalidParameter', ...
@@ -39,7 +39,7 @@ function [detailFine, detailMid] = splitLayerDualBandPass(img, params)
     end
 
     kernelFine = createDoGKernel(5, params.sigmaFine1, params.sigmaFine2);
-    kernelMid = createDoGKernel(13, params.sigmaMid1, params.sigmaMid2);
+    kernelMid = createDoGKernel(9, params.sigmaMid1, params.sigmaMid2);
     imgInput = double(img);
     detailFine = imfilter(imgInput, kernelFine, 'replicate', 'conv');
     detailMid = imfilter(imgInput, kernelMid, 'replicate', 'conv');
