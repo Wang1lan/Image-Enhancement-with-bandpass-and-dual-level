@@ -32,7 +32,7 @@ imgName = {imgName_1, imgName_2, imgName_3, imgName_4};
 
 %% 增益系数
 alphaMid = 15;
-alphaFine = 7.5;
+alphaFine = 7;
 bandPassParams = struct('sigmaFine1', 0.7, 'sigmaFine2', 1.2, ...
     'sigmaMid1', 1.1, 'sigmaMid2', 1.8);
 noiseParams = struct('patchSize', 5, 'stride', 3, 'tailNum', 5);
