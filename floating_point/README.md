@@ -53,7 +53,7 @@ floating_point/
 ## 处理流程与默认参数
 
 1. `highlightMask` 检测亮斑，`softHighlightMaskDual` 生成细尺度和中尺度软保护掩码。
-2. `splitLayerDualBandPass` 通过 `createDoGKernel` 直接从原图独立提取两种尺度的带通细节：Fine 为 5×5 核、sigma 为 0.7/1.2；Mid 为 13×13 核、sigma 为 1.5/3.0。两尺度不串联，带通滤波边界采用复制填充。
+2. `splitLayerDualBandPass` 通过 `createDoGKernel` 直接从原图独立提取两种尺度的带通细节：Fine 为 5×5 核、sigma 为 0.7/1.2；Mid 为 9×9 核、sigma 为 1.1/1.8。两尺度不串联，带通滤波边界采用复制填充。
 3. `demo.m` 中的局部函数按以下公式重建，随后限幅到 [0,255]、四舍五入并转为 `uint8`：
 
    ```matlab
